@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h3 text-center class="pronto-gris">Adicionar vehículo</h3>
+    <hr class="hr-separador" hideWhen="ios">
+    <form (submit)="f.form.valid ? addVehiculo() : llenarCampos()" #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Número de placa<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input type="text" name="placa" [(ngModel)]="vehiculo.placa" placeholder="Escriba su número de placa" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Marca </ion-label>
+                <ion-select placeholder="Seleccione" #C (ionChange)="onChangeMarca(C.value)" name="marca_id" [(ngModel)]="vehiculo.marca_id" required>
+                    <ion-option *ngFor="let item of marcas" [value]="item.marca_id">{{item.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Modelo</ion-label>
+                <ion-select placeholder="Seleccione" [disabled]="!vehiculo.marca_id" name="modelo_id" [(ngModel)]="vehiculo.modelo_id" required>
+                    <ion-option *ngFor="let item of modelos" [value]="item.modelo_id">{{item.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Color</ion-label>
+                <ion-input type="text" name="placa" [(ngModel)]="vehiculo.color" placeholder="Color de su vehiculo" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Tipo</ion-label>
+                <ion-select placeholder="Seleccione" name="tipo_id" [(ngModel)]="vehiculo.tipo_id" required>
+                    <ion-option *ngFor="let item of tipos_v" [value]="item.tipo_id">{{item.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Año</ion-label>
+                <ion-datetime doneText="Aceptar" placeholder=" Seleccione año del vehiculo" displayFormat="YYYY" name="anio" max="2018" [(ngModel)]="vehiculo.anio"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Cantidad de ejes</ion-label>
+                <ion-input type="number" name="cant_ejes" [(ngModel)]="vehiculo.cant_ejes" placeholder="Cantidad de ejes"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Pais</ion-label>
+                <ion-select placeholder="Seleccione" #C (ionChange)="onChangeCountry(C.value)" name="country_id" [(ngModel)]="vehiculo.country_id" required>
+                    <ion-option *ngFor="let item of paises" [value]="item.country_id">{{item.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Ciudad</ion-label>
+                <ion-select placeholder="Seleccione" [disabled]="!vehiculo.country_id" name="province_id" [(ngModel)]="vehiculo.province_id" required>
+                    <ion-option *ngFor="let item of provicias" [value]="item.provincia_id">{{item.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+
+        </ion-list>
+        <div padding>
+            <button type="submit" class="btn-text-left" text-left color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+           Adicionar vehiculo
+        </button>
+        </div>
+    </form>
+</ion-content>

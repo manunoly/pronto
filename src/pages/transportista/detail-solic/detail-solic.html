@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-label text-center color="pronto-gris">Detalle solicitud</ion-label>
+    <hr class="hr-separador" hideWhen="ios">
+    <ion-list>
+        <ion-item>
+            <h2 class="pronto-verde">{{solicitud.titulo}}</h2>
+            <p><strong>Categoria:</strong> {{solicitud.categoria}}</p>
+            <p><strong>Subcategoria:</strong> {{solicitud.subcategoria}}</p>
+            <p><strong> Fecha entrega:</strong> {{solicitud.fecha_operation}}</p>
+            <p><strong> Personal adicional:</strong> {{solicitud.personal_adicional}}</p>
+            <p><strong> Descripción:</strong></p>
+            <p text-wrap> {{solicitud.descripcion}}</p>
+
+            <button *ngIf="!solicitud.cotizacion_enviada" (tap)="enviarCotizacion()" color="pronto-gris" ion-button block padding>Enviar cotización</button>
+            <button *ngIf="solicitud.cotizacion_enviada || solicitud.cotizacion_enviada" (tap)="enviarCotizacion()" color="pronto-gris" padding ion-button block>Reenviar cotización</button>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>

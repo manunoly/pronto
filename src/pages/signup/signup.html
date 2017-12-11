@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label text-center color="azul-claro">Registro de usuario</ion-label>
+    <hr class="hr-separador">
+    <form (submit)="f.form.valid ? doSignUp() : llenarCampos()" #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Tipo de usuario<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-select placeholder="Seleccione" name="rol" [(ngModel)]="user.rol" required>
+                    <ion-option value="1">Transportista</ion-option>
+                    <ion-option value="2">Cliente</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Nombre completo<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input type="text" name="name" [(ngModel)]="user.nombre" placeholder="Escriba su nombre" required></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Correo electrónico<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input type="email" name="email" [(ngModel)]="user.email" placeholder="Escriba su correo..." required email></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Contraseña<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="user.password" placeholder="Escriba su contraseña..." required></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Teléfono móvil<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input name="movil" [(ngModel)]="user.movil" type="tel" placeholder="Escriba su movil..." required></ion-input>
+            </ion-item>
+            <div *ngIf="user.rol == '1'">
+                <ion-item>
+                    <ion-label stacked>Tipo de transportista<span class="requerido"><sup>*</sup></span></ion-label>
+                    <ion-select name="tipo_transportista" [(ngModel)]="user.tipo_transportista" required>
+                        <ion-option value="1">Persona natural</ion-option>
+                        <ion-option value="2">Empresa de transporte</ion-option>
+                        <ion-option value="3">Cooperativa de transporte</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>Pais<span class="requerido"><sup>*</sup></span></ion-label>
+                    <ion-select placeholder="Seleccione" #C (ionChange)="onChangeCountry(C.value)" name="country_id" [(ngModel)]="user.country_id" required>
+                        <ion-option *ngFor="let item of paises" [value]="item.country_id">{{item.nombre}}</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked>Ciudad<span class="requerido"><sup>*</sup></span></ion-label>
+                    <ion-select placeholder="Seleccione" [disabled]="!user.country_id" name="province_id" [(ngModel)]="user.province_id" required>
+                        <ion-option *ngFor="let item of provicias" [value]="item.provincia_id">{{item.nombre}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            <div padding>
+                <button class="btn-text-left" text-left color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+
+                   Registrarse
+
+                </button>
+            </div>
+
+        </ion-list>
+    </form>
+</ion-content>

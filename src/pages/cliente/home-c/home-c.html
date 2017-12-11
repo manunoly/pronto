@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (tap)="exit()">
+          <ion-icon name="exit"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <ion-label class="fs-25">Bienvenido <span class="pronto-verde">{{user.nombre}}</span></ion-label>
+                <ion-label class="mg-t-0">Cliente </ion-label>
+                <p>A partir de esta ventana, usted podra manipular sus solicitudes</p>
+                <hr class="hr-separador">
+            </ion-col>
+            <ion-col col-6 text-center>
+                <img (tap)="openAdd()" src="assets/imgs/1.png" />
+                <ion-label class="mg-t-0">Crear </ion-label>
+            </ion-col>
+
+            <ion-col col-6 text-center>
+                <img (tap)="openPendiente()" src="assets/imgs/2.png" />
+                <ion-label class="mg-t-0">Pendientes</ion-label>
+            </ion-col>
+
+            <ion-col col-6 text-center>
+                <img (tap)="openTrasladosCttd()" src="assets/imgs/3.png" />
+                <ion-label class="mg-t-0">Completadas </ion-label>
+            </ion-col>
+
+            <ion-col col-6 text-center>
+                <img (tap)="openPerfil()" src="assets/imgs/4.png" />
+                <ion-label class="mg-t-0">Perfil </ion-label>
+            </ion-col>
+
+
+            <ion-col col-6 text-center>
+                <img (tap)="openChangePass() " src="assets/imgs/6.png" />
+                <ion-label class="mg-t-0">Contraseña </ion-label>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h3 text-center class="pronto-gris">Editar vehículo</h3>
+    <hr class="hr-separador">
+    <form (submit)="f.form.valid ? saveVehiculo() : llenarCampos()" #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Número de placa<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input type="text" name="placa" [(ngModel)]="vehiculo.placa" placeholder="Escriba su número de placa" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Marca </ion-label>
+                <ion-select placeholder="Seleccione" #C (ionChange)="onChangeMarca(C.value)" name="marca_id" required>
+                    <ion-option selected>Toyota</ion-option>
+                    <ion-option>Hyundai</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Modelo</ion-label>
+                <ion-select placeholder="Seleccione" name="modelo_id" required>
+                    <ion-option selected>Corolla</ion-option>
+                    <ion-option>Otro Modelo</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Color</ion-label>
+                <ion-input type="text" name="color" [(ngModel)]="vehiculo.color" placeholder="Color de su vehiculo" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Tipo</ion-label>
+                <ion-select placeholder="Seleccione" name="tipo_id" required>
+                    <ion-option selected>Tipo 1</ion-option>
+                    <ion-option>Tipo 2</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Año</ion-label>
+                <ion-datetime doneText="Aceptar" value="2017" placeholder=" Seleccione año del vehiculo" displayFormat="YYYY" name="anio" max="2018"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Cantidad de ejes</ion-label>
+                <ion-input type="number" value="2" name="cant_ejes" placeholder="Cantidad de ejes"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Pais</ion-label>
+                <ion-select placeholder="Seleccione" #C (ionChange)="onChangeCountry(C.value)" name="country_id" required>
+                    <ion-option selected>Ecuador</ion-option>
+                    <ion-option>Cuba</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Ciudad</ion-label>
+                <ion-select placeholder="Seleccione" name="province_id" required>
+                    <ion-option selected>Quito</ion-option>
+                    <ion-option>Otra ciudad</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button type="submit" class="btn-text-left" text-left color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+         Editar vehiculo
+      </button>
+        </div>
+    </form>
+</ion-content>

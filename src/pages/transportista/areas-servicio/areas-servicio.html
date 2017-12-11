@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h3 class="pronto-gris">Ofresco mis servicios en:</h3>
+    <hr class="hr-separador" hideWhen="ios">
+    <ion-item>
+        <ion-label stacked>Pais<span class="requerido"><sup>*</sup></span></ion-label>
+        <ion-select placeholder="Seleccione" #C (ionChange)="onChangeCountry(C.value)" name="country_id" [(ngModel)]="country_id" required>
+            <ion-option *ngFor="let item of paises" [value]="item.country_id">{{item.nombre}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Ciudad<span class="requerido"><sup>*</sup></span></ion-label>
+        <ion-select placeholder="Seleccione" [disabled]="!country_id" name="province_id" [(ngModel)]="province_id" required>
+            <ion-option *ngFor="let item of provicias" [value]="item.provincia_id">{{item.nombre}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <button [disabled]="!province_id" (tap)="addArea()" color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+      Adicionar área de servicio
+    </button>
+    <h3 class="pronto-verde">Selección</h3>
+    <hr class="hr-separador">
+    <ion-list>
+        <ion-item *ngFor="let item of misAreas">
+            {{item.nombre}}
+            <button (tap)="deleteArea(item.provincia_id)" class="fs-20" color="danger" ion-button icon-only item-end>
+          <ion-icon   name="close"></ion-icon>
+        </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

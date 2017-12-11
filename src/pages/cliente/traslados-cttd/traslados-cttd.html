@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label text-center color="pronto-gris">Mis traslados contratados</ion-label>
+
+    <hr class="hr-separador">
+    <ion-list>
+        <ion-item *ngFor="let item of traslados;let item_index = index">
+            <h2 class="pronto-verde">{{item.titulo}}</h2>
+            <p><strong> {{item.categoria}} - {{item.subcategoria}}</strong></p>
+            <p><strong> Personal adicional:</strong> {{item.personal_adicional}}</p>
+            <p><strong> Fecha entrega:</strong> {{item.fecha_operation}}</p>
+            <p text-wrap>{{item.descripcion}}</p>
+
+            <ng-container *ngIf="item.estado == 1; else elseTemplate">
+                <button ion-button color="pronto-warning" block outline>Sin iniciar</button>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ion-grid>
+                    <ion-row align-items-center>
+                        <ion-col col-5>
+                            <button *ngIf="item.estado == 2" ion-button color="pronto-warning" block outline>En curso</button>
+                            <button *ngIf="item.estado == 3" ion-button color="pronto-verde" block outline>Terminado</button>
+                        </ion-col>
+                        <ion-col col-7>
+                            <button (tap)="mapa()" *ngIf="item.estado == 2" padding block color="pronto-gris" ion-button>
+                                Ver traslado
+                              </button>
+
+                            <div *ngIf="item.estado == 3 ">
+                                <button (tap)="openRate()" padding block color="pronto-gris" ion-button>
+                                    Evaluar
+                                  </button>
+                            </div>
+
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ng-template>
+        </ion-item>
+    </ion-list>
+</ion-content>

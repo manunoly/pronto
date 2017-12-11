@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>Califica el traslado</ion-title>
+
+        <ion-buttons end>
+            <button (tap)="close()" ion-button icon-only>
+                  <ion-icon  class="fs-25"  name="close"></ion-icon>
+                    </button>
+        </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-rating [readOnly]="false" [value]="0" (clicked)="starClicked($event)">
+    </ion-rating>
+
+    <button color="pronto-gris" class="btn-text-left" ion-button block margin-top="10" margin-bottom="2" (tap)="sendRate()">
+      Calificar servicio
+      </button>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-label text-center class="fs-30">Pronto<span class="pronto-verde">Carga</span>.com</ion-label>
+    <ion-label text-center>Lleva o envia al mejor precio</ion-label>
+
+    <form (submit)="f.form.valid ? doLogin() : llenarCampos()" #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label color="pronto-verde" stacked>Correo electrónico<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input color="pronto-verde" type="email" name="email" [(ngModel)]="user.email" #email="ngModel" placeholder="Escriba su correo..." email></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="pronto-verde" stacked>Contraseña<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input color="pronto-verde" type="password" name="password" [(ngModel)]="user.password" placeholder="Escriba su contraseña..." required></ion-input>
+            </ion-item>
+            <h5>(for development)</h5>
+            <ion-item>
+
+                <ion-label>Tipo de usuario</ion-label>
+                <ion-select name="rol" [(ngModel)]="user.rol" required>
+                    <ion-option value="1">Transportista</ion-option>
+                    <ion-option value="2">Cliente</ion-option>
+                </ion-select>
+            </ion-item>
+            <div padding>
+                <button class="btn-text-left" text-left color="pronto-verde" ion-button block margin-bottom="1" margin-top="2">
+                    <ion-icon name="log-in"></ion-icon>&nbsp; Autenticar
+              </button>
+            </div>
+        </ion-list>
+    </form>
+    <button (tap)="showPrompt()" ion-button color="pronto-verde" ion-button block outline>Recuperar Contraseña</button>
+
+    <hr margin-top="25" margin-bottom="25" class="hr-separador">
+    <button (tap)="openSignUp()" ion-button color="pronto-gris" ion-button block>Registro de Usuario</button>
+
+</ion-content>

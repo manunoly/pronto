@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <ion-label text-center color="pronto-gris">Crear solicitud</ion-label>
+
+    <hr class="hr-separador">
+    <form (submit)="f.form.valid ? addSol() : llenarCampos()" #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Titulo<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-input name="titulo" [(ngModel)]="solicitud.titulo" required></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label>Categoría de la carga<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-select name="categoria_carga_id" [(ngModel)]="solicitud.categoria_carga_id" required>
+                    <ion-option value="1">Líquidos</ion-option>
+                    <ion-option value="2">Tecnología</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Subcategoría de la carga<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-select name="subcategoria_carga_id" [(ngModel)]="solicitud.subcategoria_carga_id" required>
+                    <ion-option *ngIf="solicitud.categoria_carga_id == '1'">Cerveza</ion-option>
+                    <ion-option *ngIf="solicitud.categoria_carga_id == '1'">Resfresco</ion-option>
+                    <ion-option *ngIf="solicitud.categoria_carga_id == '2'">Televisor</ion-option>
+                    <ion-option *ngIf="solicitud.categoria_carga_id == '2'">Teléfono</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Persona Adicional</ion-label>
+                <ion-input name="cant" [(ngModel)]="solicitud.cant_personal_adicional" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Fecha del traslado<span class="requerido"><sup>*</sup></span></ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Descripción</ion-label>
+                <ion-textarea row="3"></ion-textarea>
+            </ion-item>
+
+            <div padding>
+                <button class="btn-text-left" text-left color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+                     Crear solicitud
+                  </button>
+            </div>
+
+        </ion-list>
+    </form>
+</ion-content>

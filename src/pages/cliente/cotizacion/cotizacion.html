@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label text-center color="pronto-gris">Cotizaciones</ion-label>
+
+    <hr class="hr-separador">
+    <ion-list>
+        <ion-item *ngFor="let item of cotizaciones; let i = index;">
+            <h2 class="pronto-verde">Nombre del transportista {{i+1}}</h2>
+            <p><strong>Precio:</strong>$ {{item.valor}}</p>
+            <p text-wrap> {{item.descripcion}}</p>
+            <button (tap)="aceptarCot(item.cotizacion_id)" color="pronto-gris" ion-button block padding>Aceptar cotización</button>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

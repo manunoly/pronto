@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <h2 class="pronto-verde"> {{vehiculo.marca}} - {{vehiculo.modelo}}</h2>
+        </ion-item>
+        <ion-item>
+            <p><strong>Placa:</strong> {{vehiculo.color}}</p>
+        </ion-item>
+        <ion-item>
+            <p><strong>Color:</strong> {{vehiculo.tipo}}</p>
+        </ion-item>
+        <ion-item>
+            <p><strong> Año:</strong> {{vehiculo.anio}}</p>
+        </ion-item>
+        <ion-item>
+            <p><strong> Números de ejes</strong> {{vehiculo.ejes}}</p>
+        </ion-item>
+        <ion-item>
+            <p><strong> País:</strong> {{vehiculo.pais}}</p>
+        </ion-item>
+        <ion-item>
+            <p><strong> Provincia:</strong> {{vehiculo.provincia}}</p>
+        </ion-item>
+        <ion-item *ngIf="vehiculo.activo">
+            <p><strong>Activo:</strong> Si</p>
+        </ion-item>
+        <ion-item *ngIf="!vehiculo.activo">
+            <p><strong>Activo:</strong> No</p>
+        </ion-item>
+
+
+    </ion-list>
+</ion-content>

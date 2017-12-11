@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h3 text-center class="pronto-gris">Cambiar contraseña</h3>
+    <hr class="hr-separador">
+    <ion-item>
+        <ion-label stacked>Contraseña anterior<span class="requerido"><sup>*</sup></span></ion-label>
+        <ion-input type="password" name="anterior" [(ngModel)]="anterior_pass"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Contraseña nueva<span class="requerido"><sup>*</sup></span></ion-label>
+        <ion-input type="password" name="new" [(ngModel)]="new_pass"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Repetir contraseña nueva<span class="requerido"><sup>*</sup></span></ion-label>
+        <ion-input type="password" value="" name="confirm_new" [(ngModel)]="confirm_new_pass"></ion-input>
+    </ion-item>
+    <div padding>
+        <button [disabled]="!anterior_pass || !new_pass || !confirm_new_pass || new_pass !== confirm_new_pass" (tap)="cambiar_password()" class="btn-text-left" text-left color="pronto-gris" ion-button block margin-bottom="1" margin-top="2">
+   Cambiar contraseña
+</button>
+    </div>
+</ion-content>

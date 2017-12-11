@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="pronto-verde">
+        <ion-title text-center>
+            ProntoCarga.com
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-label text-center color="pronto-gris">Solicitudes de traslado</ion-label>
+
+    <hr class="hr-separador" hideWhen="ios">
+    <ion-list>
+        <ion-item *ngFor="let item of solicitudes">
+            <h2 class="pronto-verde">{{item.titulo}}</h2>
+            <p><strong>Categoria:</strong> {{item.categoria}}</p>
+            <p><strong> Fecha entrega:</strong> {{item.fecha_operation}}</p>
+            <p *ngIf="item.cotizacion_enviada"><strong> <span class="pronto-verde"> Cotización enviada</span></strong></p>
+            <button padding (tap)="openDetalleSol(item,item.solicitud_id)" color="pronto-gris" ion-button block>Ver detalle</button>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
