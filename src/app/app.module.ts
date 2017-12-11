@@ -66,8 +66,7 @@ import { RatePage } from '../pages/cliente/rate/rate';
     HttpClientModule,
     IonicModule.forRoot(MyApp,{
       scrollPadding: false,
-      scrollAssist: true,
-      pageTransition: 'ios-transition'
+      scrollAssist: true
     })
   ],
   bootstrap: [IonicApp],
