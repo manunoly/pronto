@@ -6,8 +6,8 @@ import { Solicitud } from '../../models/solicitud';
 
 @Injectable()
 export class ApiProvider {
-  apiBaseUrl = 'http://192.168.137.1:3000/';
-  // apiBaseUrl = 'http://localhost:3000/';
+  // apiBaseUrl = 'http://192.168.137.1:3000/';
+  apiBaseUrl = 'http://localhost:3000/';
   constructor(public http: HttpClient) {
 
   }
