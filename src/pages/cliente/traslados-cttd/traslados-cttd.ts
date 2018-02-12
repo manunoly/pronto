@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { Traslado } from '../../../models/traslados';
 import { ApiProvider } from '../../../providers/api/api';
 import { HttpErrorResponse } from '@angular/common/http';
-import { RatePage } from '../../cliente/rate/rate';
-import { MapaPage } from '../mapa/mapa';
 
 /**
  * Generated class for the TrasladosCttdPage page.
@@ -39,7 +37,7 @@ export class TrasladosCttdPage {
     console.log('ionViewDidLoad TrasladosCttdPage');
   }
   openRate(){
-    const profileModal = this.modalCtrl.create(RatePage);
+    const profileModal = this.modalCtrl.create('RatePage');
     profileModal.onDidDismiss(data => {
 
     });
@@ -47,7 +45,7 @@ export class TrasladosCttdPage {
     profileModal.present();
   }
   mapa(){
-    this.navCtrl.push(MapaPage);
+    this.navCtrl.push('MapaPage');
   }
 
 }

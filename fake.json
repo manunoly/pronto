@@ -1,148 +1,62 @@
 {
-    "peticion_pais": {
-        "status": 200,
-        "lista_paises": [{
-                "country_id": 1,
-                "nombre": "Ecuador"
-            },
-            {
-                "country_id": 2,
-                "nombre": "Cuba"
-            }
-        ]
-    },
-    "peticion_provincias": {
-        "status": 200,
-        "lista_provincias": [{
-                "provincia_id": 1,
-                "nombre": "La Habana"
-            },
-            {
-                "provincia_id": 2,
-                "nombre": "Quito"
-            }
-        ]
-    },
-    "registro": {
-        "rol": "1",
-        "nombre": "user.nombre",
-        "email": "hg@we.we",
-        "phone_movil": "12"
-    },
-    "recordad_password": {
-        "email": "yrmtnez@nauta.cu"
-    },
-    "auth": {
-        "email": "sd@asd.asd",
-        "password": "sd",
-        "rol": "2"
-    },
-    "lista_vehiculos": {
-        "status": 200,
-        "lista_vehiculos": [{
-                "placa": "PDF 5684",
-                "marca": "Toyota",
-                "modelo": "Corrolla",
-                "color": "blanco",
-                "tipo": "tipo",
-                "anio": 2017,
-                "ejes": 2,
-                "país": "Cuba",
-                "provincia": "Cienfuegos",
-                "activo": 1,
-                "vehiculo_id": 1
-            },
-            {
-                "placa": "BBE 7021",
-                "marca": "Hyundai",
-                "modelo": "100",
-                "color": "Negro",
-                "tipo": "tipo",
-                "anio": 2016,
-                "ejes": 2,
-                "país": "Ecuador",
-                "provincia": "Mienfuegos",
-                "activo": 0,
-                "vehiculo_id": 2
-            }
-        ]
-    },
-    "add_vehiculo": {
-        "transportista_id": 1,
-        "placa": "david",
-        "marca_id": 1,
-        "modelo_id": 1,
-        "color": "asd",
-        "tipo_id": "Tipo 2",
-        "anio": "2018",
-        "cant_ejes": "66",
-        "country_id": 2
-    },
-    "lista_marcas": {
-        "status": 200,
-        "lista_marcas": [{
-                "marca_id": 1,
-                "nombre": "Toyota"
-            },
-            {
-                "marca_id": 2,
-                "nombre": "Hyundai"
-            }
-        ]
-    },
-    "cargar_modelos_autos": {
-        "status": 200,
-        "lista_modelo": [{
-                "modelo_id": 1,
-                "nombre": "modelo 1"
-            },
-            {
-                "modelo_id": 2,
-                "nombre": "modelo 2"
-            }
-        ]
-    },
-    "cargar_tipos_vehiculos": {
-        "status": 200,
-        "lista_tipos": [{
-                "modelo_id": 1,
-                "nombre": "Tipo 1"
-            },
-            {
-                "modelo_id": 2,
-                "nombre": "Tipo 2"
-            }
-        ]
-    },
-    "eliminar_vehiculo": [{
-            "placa": "PDF 5684",
-            "marca": "Toyota",
-            "modelo": "Corrolla",
-            "color": "blanco",
-            "tipo": "tipo",
-            "anio": 2017,
-            "ejes": 2,
-            "país": "Cuba",
-            "provincia": "Cienfuegos",
-            "activo": 1,
-            "vehiculo_id": 1
-        },
-        {
-            "placa": "BBE 7021",
-            "marca": "Hyundai",
-            "modelo": "100",
-            "color": "Negro",
-            "tipo": "tipo",
-            "anio": 2016,
-            "ejes": 2,
-            "país": "Ecuador",
-            "provincia": "Mienfuegos",
-            "activo": 0,
-            "vehiculo_id": 2
-        }
-    ],
-    "detalle_vehiculo": {
-        "status": 200,
+  "peticion_pais": {
+    "status": 200,
+    "lista_paises": [
+      {
+        "country_id": 1,
+        "nombre": "Ecuador"
+      },
+      {
+        "country_id": 2,
+        "nombre": "Cuba"
+      }
+    ]
+  },
+  "peticion_provincias": {
+    "status": 200,
+    "lista_provincias": [
+      {
+        "provincia_id": 1,
+        "nombre": "La Habana"
+      },
+      {
+        "provincia_id": 2,
+        "nombre": "Quito"
+      }
+    ]
+  },
+  "registro": {
+    "rol": "1",
+    "nombre": "Pedro Perez",
+    "email": "t.email@test.com",
+    "phone_movil": "asd"
+  },
+  "recordad_password": {
+    "email": "yrmtnez@nauta.cu"
+  },
+  "auth": {
+    "email": "c.email@test.com",
+    "password": "g",
+    "rol": "2",
+    "nombre": "Armando Paredes"
+  },
+  "lista_vehiculos": {
+    "status": 200,
+    "lista_vehiculos": [
+      {
+        "placa": "PDF 5684",
+        "marca": "Toyota",
+        "modelo": "Corrolla",
+        "color": "blanco",
+        "tipo": "tipo",
+        "anio": 2017,
+        "ejes": 2,
+        "país": "Cuba",
+        "provincia": "Cienfuegos",
+        "activo": 1,
+        "vehiculo_id": 1
+      },
+      {
         "placa": "BBE 7021",
         "marca": "Hyundai",
         "modelo": "100",
@@ -150,235 +64,336 @@
         "tipo": "tipo",
         "anio": 2016,
         "ejes": 2,
-        "pais": "Ecuador",
+        "país": "Ecuador",
         "provincia": "Mienfuegos",
-        "activo": 1,
-        "vehiculo_id": 1,
-        "lista_fotos": [{
-                "url_photo": "Tipo 1"
-            },
-            {
-                "url_photo": "Tipo 2"
-            }
-        ]
+        "activo": 0,
+        "vehiculo_id": 2
+      }
+    ]
+  },
+  "add_vehiculo": {
+    "transportista_id": 1,
+    "placa": "David",
+    "marca_id": 1,
+    "modelo_id": 1,
+    "color": "Hh",
+    "tipo_id": "Tipo 2",
+    "anio": "2018",
+    "cant_ejes": "2",
+    "country_id": 2
+  },
+  "lista_marcas": {
+    "status": 200,
+    "lista_marcas": [
+      {
+        "marca_id": 1,
+        "nombre": "Toyota"
+      },
+      {
+        "marca_id": 2,
+        "nombre": "Hyundai"
+      }
+    ]
+  },
+  "cargar_modelos_autos": {
+    "status": 200,
+    "lista_modelo": [
+      {
+        "modelo_id": 1,
+        "nombre": "modelo 1"
+      },
+      {
+        "modelo_id": 2,
+        "nombre": "modelo 2"
+      }
+    ]
+  },
+  "cargar_tipos_vehiculos": {
+    "status": 200,
+    "lista_tipos": [
+      {
+        "modelo_id": 1,
+        "nombre": "Tipo 1"
+      },
+      {
+        "modelo_id": 2,
+        "nombre": "Tipo 2"
+      }
+    ]
+  },
+  "eliminar_vehiculo": [
+    {
+      "placa": "PDF 5684",
+      "marca": "Toyota",
+      "modelo": "Corrolla",
+      "color": "blanco",
+      "tipo": "tipo",
+      "anio": 2017,
+      "ejes": 2,
+      "país": "Cuba",
+      "provincia": "Cienfuegos",
+      "activo": 1,
+      "vehiculo_id": 1
     },
-    "editar_vehiculo": {
-        "color": "Cambio",
-        "country_id": 2,
-        "vehiculo_id": 1
-    },
-    "obtener_todos_servicios_prestados": {
-        "status": 200,
-        "lista_servicios": [{
-                "servicio_id": 1,
-                "nombre": "Servicio 1"
-            },
-            {
-                "servicio_id": 2,
-                "nombre": "Servicio 2"
-            }
-        ]
-    },
-    "obtener_mis_servicios_prestados": {
-        "status": 200,
-        "lista_servicios": [{
-                "servicio_id": 3,
-                "nombre": "Servicio 3"
-            },
-            {
-                "servicio_id": 4,
-                "nombre": "Servicio 4"
-            }
-        ]
-    },
-    "listar_areas_seleccionadas_servicio": {
-        "status": 200,
-        "lista_areas": [{
-                "provincia_id": 3,
-                "nombre": "Area 1 "
-            },
-            {
-                "provincia_id": 4,
-                "nombre": "Area 2"
-            }
-        ]
-    },
-    "listar_solicitudes_servicio_activas": {
-        "status": 200,
-        "lista_solicitudes_activas": [{
-                "solicitud_id": 1,
-                "titulo": "Solicitud 1 ",
-                "categoria": "Mudanza",
-                "subcategoria": "Subcategoria Mudanza",
-                "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum ratione nesciunt at similique nam atque ea beatae harum laboriosam? Maxime accusamus hic dolor vero eligendi dolore porro consectetur quia.",
-                "personal_adicional": 1,
-                "fecha_operation": "2017-12-24",
-                "cotizacion_enviada": 1
-            },
-            {
-                "solicitud_id": 2,
-                "titulo": "Solicitud 2 ",
-                "categoria": "Transporte Liquidos",
-                "subcategoria": "Subcategoria Liquidos",
-                "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum ratione nesciunt at similique nam atque ea beatae harum laboriosam? Maxime accusamus hic dolor vero eligendi dolore porro consectetur quia.",
-                "personal_adicional": 2,
-                "fecha_operation": "2017-11-25",
-                "cotizacion_enviada": 0
-            }
-        ]
-    },
-    "mis_traslados_realizados": {
-        "status": 200,
-        "lista_traslados": [{
-                "traslado_id": 1,
-                "solicitud_id": 1,
-                "titulo": "Traslado 1",
-                "categoria": "Mudanza",
-                "subcategoria": "Subcategoria Mudanza",
-                "descripcion": "Esto es la descripcion de un una mudanza",
-                "personal_adicional": 3,
-                "fecha_operation": "2017-11-12",
-                "estado": 1,
-                "evaluacion": 0
-            },
-            {
-                "traslado_id": 3,
-                "solicitud_id": 3,
-                "titulo": "Traslado 3",
-                "categoria": "Otros",
-                "subcategoria": "cualquier cosa",
-                "descripcion": "Esto es la descripcion",
-                "personal_adicional": 1,
-                "fecha_operation": "2017-04-10",
-                "estado": 3,
-                "evaluacion": 4
-            },
-            {
-                "traslado_id": 2,
-                "solicitud_id": 2,
-                "titulo": "Traslado 2",
-                "categoria": "Traslado de liquidos",
-                "subcategoria": "Cerveza",
-                "descripcion": "Esto es la descripcion del traslado de cerveza",
-                "personal_adicional": 2,
-                "fecha_operation": "2017-10-22",
-                "estado": 2,
-                "evaluacion": 0
-            }
-
-        ]
-    },
-    "mis_solicitudes_ejecutadas": {
-        "status": 200,
-        "lista_solicitudes": [{
-                "traslado_id": 1,
-                "solicitud_id": 1,
-                "titulo": "Traslado 1",
-                "categoria": "Mudanza",
-                "subcategoria": "Subcategoria Mudanza",
-                "descripcion": "Esto es la descripcion de un una mudanza",
-                "personal_adicional": 3,
-                "fecha_operation": "2017-11-12",
-                "estado": 1,
-                "evaluacion": 0
-            },
-            {
-                "traslado_id": 3,
-                "solicitud_id": 3,
-                "titulo": "Traslado 3",
-                "categoria": "Otros",
-                "subcategoria": "cualquier cosa",
-                "descripcion": "Esto es la descripcion",
-                "personal_adicional": 1,
-                "fecha_operation": "2017-04-10",
-                "estado": 3,
-                "evaluacion": 4
-            },
-            {
-                "traslado_id": 2,
-                "solicitud_id": 2,
-                "titulo": "Traslado 2",
-                "categoria": "Traslado de liquidos",
-                "subcategoria": "Cerveza",
-                "descripcion": "Esto es la descripcion del traslado de cerveza",
-                "personal_adicional": 2,
-                "fecha_operation": "2017-10-22",
-                "estado": 2,
-                "evaluacion": 0
-            }
-
-        ]
-    },
-    "cotizaciones_por_solicitud": {
-        "status": 200,
-        "lista_cotizaciones": [{
-                "cotizacion_id": 1,
-                "transportista_id": 1,
-                "valor": 200,
-                "descripcion": "Esto es la descripcion de la cotizacion 1"
-            },
-            {
-                "cotizacion_id": 2,
-                "transportista_id": 2,
-                "valor": 100,
-                "descripcion": "Esto es la descripcion de la cotizacion 2"
-            },
-            {
-                "cotizacion_id": 3,
-                "transportista_id": 3,
-                "valor": 800,
-                "descripcion": "Esto es la descripcion de la cotizacion 3"
-            }
-        ]
-    },
-
-    "detalle_solicitud": {
-        "status": 200,
-        "solicitud_id": 3,
+    {
+      "placa": "BBE 7021",
+      "marca": "Hyundai",
+      "modelo": "100",
+      "color": "Negro",
+      "tipo": "tipo",
+      "anio": 2016,
+      "ejes": 2,
+      "país": "Ecuador",
+      "provincia": "Mienfuegos",
+      "activo": 0,
+      "vehiculo_id": 2
+    }
+  ],
+  "detalle_vehiculo": {
+    "status": 200,
+    "placa": "BBE 7021",
+    "marca": "Hyundai",
+    "modelo": "100",
+    "color": "Negro",
+    "tipo": "tipo",
+    "anio": 2016,
+    "ejes": 2,
+    "pais": "Ecuador",
+    "provincia": "Mienfuegos",
+    "activo": 1,
+    "vehiculo_id": 1,
+    "lista_fotos": [
+      {
+        "url_photo": "Tipo 1"
+      },
+      {
+        "url_photo": "Tipo 2"
+      }
+    ]
+  },
+  "editar_vehiculo": {
+    "color": "Negro",
+    "vehiculo_id": 1
+  },
+  "obtener_todos_servicios_prestados": {
+    "status": 200,
+    "lista_servicios": [
+      {
+        "servicio_id": 1,
+        "nombre": "Servicio 1"
+      },
+      {
+        "servicio_id": 2,
+        "nombre": "Servicio 2"
+      }
+    ]
+  },
+  "obtener_mis_servicios_prestados": {
+    "status": 200,
+    "lista_servicios": [
+      {
+        "servicio_id": 3,
+        "nombre": "Servicio 3"
+      },
+      {
+        "servicio_id": 4,
+        "nombre": "Servicio 4"
+      }
+    ]
+  },
+  "listar_areas_seleccionadas_servicio": {
+    "status": 200,
+    "lista_areas": [
+      {
+        "provincia_id": 3,
+        "nombre": "Area 1 "
+      },
+      {
+        "provincia_id": 4,
+        "nombre": "Area 2"
+      }
+    ]
+  },
+  "listar_solicitudes_servicio_activas": {
+    "status": 200,
+    "lista_solicitudes_activas": [
+      {
+        "solicitud_id": 1,
         "titulo": "Solicitud 1 ",
         "categoria": "Mudanza",
         "subcategoria": "Subcategoria Mudanza",
         "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum ratione nesciunt at similique nam atque ea beatae harum laboriosam? Maxime accusamus hic dolor vero eligendi dolore porro consectetur quia.",
         "personal_adicional": 1,
-        "fecha_operation": "2017-12-24"
-    },
-    "seleccionar_area": {
-        "provincia_id_servicio": 1,
-        "transportista_id": 1
-    },
-    "adicionar_servicio_prestado": {
+        "fecha_operation": "2017-12-24",
+        "cotizacion_enviada": 1
+      },
+      {
+        "solicitud_id": 2,
+        "titulo": "Solicitud 2 ",
+        "categoria": "Transporte Liquidos",
+        "subcategoria": "Subcategoria Liquidos",
+        "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum ratione nesciunt at similique nam atque ea beatae harum laboriosam? Maxime accusamus hic dolor vero eligendi dolore porro consectetur quia.",
+        "personal_adicional": 2,
+        "fecha_operation": "2017-11-25",
+        "cotizacion_enviada": 0
+      }
+    ]
+  },
+  "mis_traslados_realizados": {
+    "status": 200,
+    "lista_traslados": [
+      {
+        "traslado_id": 1,
+        "solicitud_id": 1,
+        "titulo": "Traslado 1",
+        "categoria": "Mudanza",
+        "subcategoria": "Subcategoria Mudanza",
+        "descripcion": "Esto es la descripcion de un una mudanza",
+        "personal_adicional": 3,
+        "fecha_operation": "2017-11-12",
+        "estado": 1,
+        "evaluacion": 0
+      },
+      {
+        "traslado_id": 3,
+        "solicitud_id": 3,
+        "titulo": "Traslado 3",
+        "categoria": "Otros",
+        "subcategoria": "cualquier cosa",
+        "descripcion": "Esto es la descripcion",
+        "personal_adicional": 1,
+        "fecha_operation": "2017-04-10",
+        "estado": 3,
+        "evaluacion": 4
+      },
+      {
+        "traslado_id": 2,
+        "solicitud_id": 2,
+        "titulo": "Traslado 2",
+        "categoria": "Traslado de liquidos",
+        "subcategoria": "Cerveza",
+        "descripcion": "Esto es la descripcion del traslado de cerveza",
+        "personal_adicional": 2,
+        "fecha_operation": "2017-10-22",
+        "estado": 2,
+        "evaluacion": 0
+      }
+    ]
+  },
+  "mis_solicitudes_ejecutadas": {
+    "status": 200,
+    "lista_solicitudes": [
+      {
+        "traslado_id": 1,
+        "solicitud_id": 1,
+        "titulo": "Traslado 1",
+        "categoria": "Mudanza",
+        "subcategoria": "Subcategoria Mudanza",
+        "descripcion": "Esto es la descripcion de un una mudanza",
+        "personal_adicional": 3,
+        "fecha_operation": "2017-11-12",
+        "estado": 1,
+        "evaluacion": 0
+      },
+      {
+        "traslado_id": 3,
+        "solicitud_id": 3,
+        "titulo": "Traslado 3",
+        "categoria": "Otros",
+        "subcategoria": "cualquier cosa",
+        "descripcion": "Esto es la descripcion",
+        "personal_adicional": 1,
+        "fecha_operation": "2017-04-10",
+        "estado": 3,
+        "evaluacion": 4
+      },
+      {
+        "traslado_id": 2,
+        "solicitud_id": 2,
+        "titulo": "Traslado 2",
+        "categoria": "Traslado de liquidos",
+        "subcategoria": "Cerveza",
+        "descripcion": "Esto es la descripcion del traslado de cerveza",
+        "personal_adicional": 2,
+        "fecha_operation": "2017-10-22",
+        "estado": 2,
+        "evaluacion": 0
+      }
+    ]
+  },
+  "cotizaciones_por_solicitud": {
+    "status": 200,
+    "lista_cotizaciones": [
+      {
+        "cotizacion_id": 1,
         "transportista_id": 1,
-        "servicio_id": 1
-    },
-    "enviar_propuesta": {
-        "transportista_id": 1,
-        "propuesta_id": 2,
-        "valor": "22",
-        "descripcion": "asd"
-    },
-    "eliminar_servicio_prestado": {
-        "transportista_id": 1,
-        "servicio_id": 1
-    },
-    "iniciar_trayecto": {
-        "transportista_id": 1,
-        "traslado_id": 1
-    },
-    "finalizar_trayecto": {
-        "transportista_id": 1,
-        "traslado_id": 2
-    },
-    "cambiar_datos_perfil": {
-        "transportista_id": 1,
-        "traslado_id": 2
-    },
-    "crear_solicitud": {
-        "titulo": "adasdsd",
-        "categoria_carga_id": "2",
-        "subcategoria_carga_id": "Televisor"
-    },
-    "cambiar_password": {
-        "anterior_pass": "7694f4a66316e53c8cdd9d9954bd611d",
-        "new_pass": "56d657a53c5ce72d472ab2bb4300e840"
-    }
+        "valor": 200,
+        "descripcion": "Esto es la descripcion de la cotizacion 1"
+      },
+      {
+        "cotizacion_id": 2,
+        "transportista_id": 2,
+        "valor": 100,
+        "descripcion": "Esto es la descripcion de la cotizacion 2"
+      },
+      {
+        "cotizacion_id": 3,
+        "transportista_id": 3,
+        "valor": 800,
+        "descripcion": "Esto es la descripcion de la cotizacion 3"
+      }
+    ]
+  },
+  "detalle_solicitud": {
+    "status": 200,
+    "solicitud_id": 3,
+    "titulo": "Solicitud 1 ",
+    "categoria": "Mudanza",
+    "subcategoria": "Subcategoria Mudanza",
+    "descripcion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptatum ratione nesciunt at similique nam atque ea beatae harum laboriosam? Maxime accusamus hic dolor vero eligendi dolore porro consectetur quia.",
+    "personal_adicional": 1,
+    "fecha_operation": "2017-12-24"
+  },
+  "seleccionar_area": {
+    "provincia_id_servicio": 2,
+    "transportista_id": 1
+  },
+  "adicionar_servicio_prestado": {
+    "transportista_id": 1,
+    "servicio_id": 2
+  },
+  "enviar_propuesta": {
+    "transportista_id": 1,
+    "propuesta_id": 1,
+    "valor": "66",
+    "descripcion": "Gg"
+  },
+  "eliminar_servicio_prestado": {
+    "transportista_id": 1,
+    "servicio_id": 4
+  },
+  "iniciar_trayecto": {
+    "transportista_id": 1,
+    "traslado_id": 1
+  },
+  "finalizar_trayecto": {
+    "transportista_id": 1,
+    "traslado_id": 2
+  },
+  "cambiar_datos_perfil": {
+    "rol": "2",
+    "nombre": "Armando Paredes",
+    "movil": "asd",
+    "email": "c.email@test.com"
+  },
+  "crear_solicitud": {
+    "titulo": "Hh",
+    "categoria_carga_id": "1",
+    "subcategoria_carga_id": "Resfresco",
+    "cant_personal_adicional": "89"
+  },
+  "cambiar_password": {
+    "anterior_pass": "7815696ecbf1c96e6894b779456d330e",
+    "new_pass": "433971d8ee9f6dfcd74eaa6297a14136"
+  }
 }

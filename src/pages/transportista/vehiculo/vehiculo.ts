@@ -4,10 +4,6 @@ import { User } from '../../../models/user';
 import { ApiProvider } from '../../../providers/api/api';
 import { Vehiculo } from '../../../models/vehiculo';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AddvehiculoPage } from '../addvehiculo/addvehiculo';
-import { DetailVehiculoPage } from '../detail-vehiculo/detail-vehiculo';
-import { EditVehiculoPage } from '../edit-vehiculo/edit-vehiculo';
-import { GalleryVehiPage } from '../gallery-vehi/gallery-vehi';
 
 /**
  * Generated class for the VehiculoPage page.
@@ -44,7 +40,7 @@ export class VehiculosPage {
       });
   }
   addVehiculo(){
-      this.navCtrl.push(AddvehiculoPage);
+      this.navCtrl.push('AddvehiculoPage');
   }
   delete(id){
   this.api.eliminar_vehiculo(id).then(
@@ -59,20 +55,20 @@ export class VehiculosPage {
     });
   }
   detail(id,index){
-    this.navCtrl.push(DetailVehiculoPage,{
+    this.navCtrl.push('DetailVehiculoPage',{
       id:id,
       vehiculo:this.vehiculos[index]
     });
   }
   edit(id){
-    this.navCtrl.push(EditVehiculoPage,{
+    this.navCtrl.push('EditVehiculoPage',{
       id:id
     });
   }
 
   openGallery(id,index){
     console.log("galeria");
-    this.navCtrl.push(GalleryVehiPage,{
+    this.navCtrl.push('GalleryVehiPage',{
       id:id,
       vehiculo:this.vehiculos[index]
     });

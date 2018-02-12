@@ -4,8 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
-import { HomeTPage } from '../pages/transportista/home-t/home-t';
-import { HomeCPage } from '../pages/cliente/home-c/home-c';
 import { User } from "../models/user";
 @Component({
   templateUrl: "app.html"
@@ -18,12 +16,14 @@ export class MyApp {
 
     if (localStorage.getItem('prontoUser') ) {
       this.user =  JSON.parse(localStorage.getItem('prontoUser'));
-      if (this.user.rol == "1")
-        this.rootPage = HomeTPage;
-       else
-        this.rootPage = HomeCPage;
+      if (this.user.email == "t.email@test.com")
+        this.rootPage = 'HomeTPage';
+      else if (this.user.email == "c.email@test.com")
+        this.rootPage = 'HomeCPage';
+      else
+        this.rootPage = LoginPage;
     }
-    else this.rootPage = LoginPage;
+     else this.rootPage = LoginPage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

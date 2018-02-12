@@ -1,20 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { LoginPage } from "../../login/login";
-import { CrearSolPage } from "../crear-sol/crear-sol";
-import { SolPenPage } from "../sol-pen/sol-pen";
-import { TrasladosCttdPage } from "../traslados-cttd/traslados-cttd";
 import { User } from '../../../models/user';
 import { ApiProvider } from '../../../providers/api/api';
-import { ChangePassPage } from '../../change-pass/change-pass';
-import { PerfilPage } from '../../perfil/perfil';
 
-/**
- * Generated class for the HomeCPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -36,19 +26,19 @@ export class HomeCPage {
     this.navCtrl.setRoot(LoginPage);
   }
   openAdd(){
-    this.navCtrl.push(CrearSolPage);
+    this.navCtrl.push('CrearSolPage');
   }
   openPendiente(){
-    this.navCtrl.push(SolPenPage);
+    this.navCtrl.push('SolPenPage');
   }
   openTrasladosCttd(){
-    this.navCtrl.push(TrasladosCttdPage);
+    this.navCtrl.push('TrasladosCttdPage');
   }
   openChangePass(){
-    this.navCtrl.push(ChangePassPage);
+    this.navCtrl.push('ChangePassPage');
   }
   openPerfil(){
-    this.navCtrl.push(PerfilPage);
+    this.navCtrl.push('PerfilPage');
   }
 
 }

@@ -18,3 +18,11 @@ levantar el fake api
 levantar aplicacion
 `ionic serve`
 
+Transportista
+email: t.email@test.com
+pass: cualquiera
+
+
+Cliente
+email: c.email@test.com
+pass: cualquiera

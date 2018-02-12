@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
-import { CotizacionPage } from "../cotizacion/cotizacion";
+import { IonicPage, NavController, Events } from 'ionic-angular';
 import { Solicitud } from '../../../models/solicitud';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ApiProvider } from '../../../providers/api/api';
 
-/**
- * Generated class for the SolPenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -36,7 +29,7 @@ export class SolPenPage {
   }
 
   openCotizacion(index,solicitud_id){
-    this.navCtrl.push(CotizacionPage,{
+    this.navCtrl.push('CotizacionPage',{
       solicitud:solicitud_id
     });
   }

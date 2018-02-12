@@ -4,13 +4,6 @@ import { Cotizacion } from '../../../models/cotizaciones';
 import { ApiProvider } from '../../../providers/api/api';
 import { HttpErrorResponse } from '@angular/common/http';
 
-/**
- * Generated class for the CotizacionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-cotizacion',
@@ -29,16 +22,13 @@ export class CotizacionPage {
         }
       },
       (err: HttpErrorResponse) => {
-      console.log("error relacionado con el servidor");
+      console.log("error relacionado con el servidor",err);
       });
   }
   aceptarCot(id){
-     this.cotizaciones = this.cotizaciones.filter((element,index,array)=> {  return element.cotizacion_id !== id});
+     this.cotizaciones = this.cotizaciones.filter((element)=> {  return element.cotizacion_id !== id});
      this.events.publish('accept:cotizacion', this.navParams.get("solicitud"));
      this.navCtrl.pop();
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CotizacionPage');
   }
 
 }

@@ -3,7 +3,6 @@ import { IonicPage,  NavController} from "ionic-angular";
 import { ApiProvider } from '../../../providers/api/api';
 import { Solicitud } from '../../../models/solicitud';
 import { HttpErrorResponse } from '@angular/common/http';
-import { DetailSolicPage } from '../detail-solic/detail-solic';
 
 
 
@@ -29,7 +28,7 @@ export class SolTrasPage {
       });
   }
   openDetalleSol(solicitud,solicitud_id){
-     this.navCtrl.push(DetailSolicPage,{
+     this.navCtrl.push('DetailSolicPage',{
        solicitud:solicitud, //paso todo el servicio
         solicitud_id:solicitud_id
      });

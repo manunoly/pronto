@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage,  NavParams, ModalController, ToastController } from 'ionic-angular';
 import { Solicitud } from '../../../models/solicitud';
-import { SendContizacionPage } from '../../transportista/send-contizacion/send-contizacion';
 import { ApiProvider } from '../../../providers/api/api';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -35,7 +34,7 @@ export class DetailSolicPage {
   }
   enviarCotizacion(){
 
-    const cotizacionModal = this.modalCtrl.create(SendContizacionPage);
+    const cotizacionModal = this.modalCtrl.create('SendContizacionPage');
     cotizacionModal.onDidDismiss(data => {
       if (data) {
        this.api.enviar_propuesta(this.api.getUser().transportista_id,this.solicitud.solicitud_id,data.cotizacion_val,data.cotizacion_des).then(

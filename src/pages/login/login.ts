@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, ToastController, AlertController } from "ionic-angular";
+import {Component} from '@angular/core';
+import {NavController, ToastController, AlertController} from "ionic-angular";
 import {User} from "../../models/user"
-import { ApiProvider } from "../../providers/api/api";
-import { HomeCPage } from "../cliente/home-c/home-c";
-import { HomeTPage } from "../transportista/home-t/home-t";
-import { SignupPage } from "../signup/signup";
-import { HttpErrorResponse } from '@angular/common/http';
+import {ApiProvider} from "../../providers/api/api";
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'page-login',
@@ -13,33 +10,41 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginPage {
   user: User;
-  constructor( public alertCtrl: AlertController,
-    public toastCtrl: ToastController,
-    public navCtrl: NavController,
-    public api: ApiProvider ) {
+
+  constructor(public alertCtrl: AlertController,
+              public toastCtrl: ToastController,
+              public navCtrl: NavController,
+              public api: ApiProvider) {
     this.user = new User();
   }
 
   doLogin() {
+    if (this.user.email == "t.email@test.com") {
+      this.user.rol = "1";
+      this.user.nombre = "Pedro Peres";
+    }
+
+    if (this.user.email == "c.email@test.com") {
+      this.user.rol = "2";
+      this.user.nombre = "Armando Paredes";
+    }
+
     this.api.login(this.user).then(
       data => {
-        // if (data["status"]==200) {
-          if (data["rol"] == "1")
-            this.navCtrl.setRoot(HomeTPage);
-          else
-            this.navCtrl.setRoot(HomeCPage);
 
-        // }
-        // else
-        // {
-        //   let toast = this.toastCtrl.create({
-        //     message: "Correo y/o contraseña incorrectos",
-        //     duration: 5000,
-        //     position: 'bottom',
-        //   });
-        //   toast.present();
-        //   console.log("algo salio mal");
-        // }
+        if (data["email"] == "t.email@test.com")
+          this.navCtrl.setRoot('HomeTPage');
+        else if (data["email"] == "c.email@test.com")
+          this.navCtrl.setRoot('HomeCPage');
+        else {
+          let toast = this.toastCtrl.create({
+            message: "Correo y/o contraseña incorrectos",
+            duration: 5000,
+            position: 'bottom',
+          });
+          toast.present();
+          console.log("algo salio mal");
+        }
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
@@ -49,12 +54,13 @@ export class LoginPage {
     );
 
 
- }
- openSignUp(){
-  this.navCtrl.push(SignupPage);
- }
+  }
 
-  llenarCampos(){
+  openSignUp() {
+    this.navCtrl.push('SignupPage');
+  }
+
+  llenarCampos() {
     console.log("escriba correo y contraseña");
   }
 
@@ -62,7 +68,7 @@ export class LoginPage {
     let prompt = this.alertCtrl.create({
       title: 'Olvido de contraseña',
       message: "Escribe tu dirección de email",
-      enableBackdropDismiss:false,
+      enableBackdropDismiss: false,
       inputs: [
         {
           name: 'email',
@@ -78,31 +84,31 @@ export class LoginPage {
         {
           text: 'Restablecer',
           handler: data => {
-           if(this.api.validateEmail( data.email)){
-            let toast = this.toastCtrl.create({
-              message: "La contraseña se ha enviando a su correo",
-              duration: 5000,
-              position: 'bottom'
-            });
-            toast.present();
-
-            const navTransition = prompt.dismiss();
-
-             this.api.recordad_password(data.email).then(
-              data => {
-                navTransition.then(() => {
-                  this.navCtrl.getActiveChildNavs().pop();
-                });
-
-              },
-              (err: HttpErrorResponse) => {
-                if (err.error instanceof Error) {
-                } else {
-                }
+            if (this.api.validateEmail(data.email)) {
+              let toast = this.toastCtrl.create({
+                message: "La contraseña se ha enviando a su correo",
+                duration: 5000,
+                position: 'bottom'
               });
+              toast.present();
+
+              const navTransition = prompt.dismiss();
+
+              this.api.recordad_password(data.email).then(
+                data => {
+                  navTransition.then(() => {
+                    this.navCtrl.getActiveChildNavs().pop();
+                  });
+
+                },
+                (err: HttpErrorResponse) => {
+                  if (err.error instanceof Error) {
+                  } else {
+                  }
+                });
               return false;
-           }
-         }
+            }
+          }
         }
       ]
     });
