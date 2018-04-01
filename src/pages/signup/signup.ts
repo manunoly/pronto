@@ -41,11 +41,18 @@ export class SignupPage {
   loadSelect() {
     this.api.get_paises().then(
       data => {
+        console.log(data);
         this.paises = data["lista_paises"];
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
         } else {
+          let toast = this.toastCtrl.create({
+            message: err["message"],
+            duration: 5000,
+            position: 'bottom',
+          });
+          toast.present();
         }
       }
     );
@@ -54,31 +61,43 @@ export class SignupPage {
   doSignUp(){
     this.api.register(this.user).then(
       data => {
-        // if (data["status"]==200) {
+         if (data["status"]==200) {
           let toast = this.toastCtrl.create({
             message: "Se ha registrado satisfactoriamente",
             duration: 5000,
             position: 'bottom',
           });
           toast.present();
-          this.navCtrl.pop();
-        // }else
-        // {
-          // let toast = this.toastCtrl.create({
-          //   message: "Ya existe usuario con ese correo",
-          //   duration: 5000,
-          //   position: 'bottom',
-          // });
-          // toast.present();
-        //   console.log("algo salio mal");
-        // }
+          // this.navCtrl.pop();
+        }else
+        {
+          let toast = this.toastCtrl.create({
+            message: data["message"],
+            duration: 5000,
+            position: 'bottom',
+          });
+          toast.present();
+        }
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
         } else {
+          let toast = this.toastCtrl.create({
+            message: err["message"],
+            duration: 5000,
+            position: 'bottom',
+          });
+          toast.present();
         }
       }
-    );
+    ).catch((err) => {
+        let toast = this.toastCtrl.create({
+          message: err["message"],
+          duration: 5000,
+          position: 'bottom',
+        });
+        toast.present();
+      });
   }
 
   llenarCampos(){

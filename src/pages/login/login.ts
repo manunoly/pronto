@@ -29,7 +29,8 @@ export class LoginPage {
       this.user.nombre = "Armando Paredes";
     }
 
-    this.api.login(this.user).then(
+    this.api.login(this.user)
+    .then(
       data => {
 
         if (data["email"] == "t.email@test.com")
